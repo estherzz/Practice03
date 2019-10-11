@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>taobao</title>
+    <base target="_blank">
+    <style>
+    *{margin:0;padding: 0;}
+    
+    .country~*,ul{position:absolute;} 
+    ul{list-style: none;}
+    body{height: 2000px;}
+    a{text-decoration:none;color:inherit;}
+    a:hover{color:#f22e00;}
+    .pagelist :hover{color:#ffffff;}
+    .l{float:left;}
+    .clear{content="";clear: both;}
+    ul[class$=list]{display: none;line-height: 28px;padding-top: 8px;background:white;border:1px solid #eeeeee;border-top:none;left:-1px;top:36px;overflow:auto;}
+  
+    
+  
+    li:hover{background:#f4f4f4;cursor: pointer}
+
+    
+    #title{width:100%;height:35px;background: #f5f5f5;border-bottom: 1px solid #eeeeee;font-family: 宋体;font-size:12px;line-height: 36px;color: #6c6c6c;}
+    
+    #title .country{width:72px;height:36px;background: url(./images/country-点.jpg) 62px 16px no-repeat;border-left: solid 1px transparent;border-right: solid 1px transparent;padding-left:5px;position: absolute;left: 16px;color: #3c3c3c}
+    #title .country:hover{background:url(./images/country-点2.jpg) 62px 16px no-repeat white;border-left: #eeeeee 1px solid;border-right: #eeeeee 1px solid;border-bottom: white 1px solid;}
+    #title .country:hover .countrylist{display:block;} 
+   
+    #title .country .countrylist{width: 267px;height: 278px;line-height: 29px; }
+        .countrylist li{padding-left:8px;}
+ 
+
+    #title .enter{width: 73px;left: 101px;color: #f22e00;} 
+    #title .register{width: 48px;left: 168px;}
+    #title .phone{width: 79px;left: 235px;}
+
+    #title .my{width:71px;height:36px;background: url(./images/country-点.jpg) 62px 16px no-repeat;border-left: solid 1px transparent;border-right: solid 1px transparent;padding-left:6px;left: 599px;}
+    #title .my:hover{background:url(./images/country-点2.jpg) 62px 16px no-repeat white;border-left: #eeeeee 1px solid;border-right: #eeeeee 1px solid;border-bottom: white 1px solid;}
+    #title .my:hover .mylist{display:block;} 
+    #title .my .mylist{width: 82px;height: 63px;}
+        .mylist li{padding-left:6px;}
+      
+    #title .shoppingcart{width:84px;background: url(./images/购物车.jpg) 6px 11px no-repeat,url(./images/country-点.jpg) 68px 16px no-repeat;left: 678px;padding-left: 24px;}
+
+    #title .bookmark{width: 59px;height: 35px;background:url(./images/country-点.jpg) 67px 16px no-repeat,url(./images/星星1.jpg) 6px 11px no-repeat;left:762px;border:1px solid transparent;border-top:none;padding-left:23px;}
+    #title .bookmark:hover{background:url(./images/星星.jpg) 6px 11px no-repeat,url(./images/country-点2.jpg) 67px 16px no-repeat white;border:1px solid #eeeeee;border-top:none;}
+    #title .bookmark:hover .bookmarklist{display: block;width: 70px;height: 63px;top:35px;padding-top:9px} 
+        .bookmarklist li{padding-left:6px;}
+
+    .c{width: 75px;padding-left: 7px; left: 846px;background: url(./images/竖条.jpg) 74px 12px no-repeat;}
+
+    .seller{width: 96px;height:35px;padding-left: 5px;left:928px;background: url(./images/country-点.jpg)  no-repeat 86px 16px ;border-left:1px solid transparent; border-right:1px solid transparent }
+    .seller:hover{background: url(./images/country-点2.jpg) 86px 16px no-repeat white;border-left: 1px solid  #eeeeee;border-right: 1px solid #eeeeee;}
+    .seller:hover .sellerlist{display: block;width: 82px;height: 203px;top:35px;padding-top:9px;}
+         .sellerlist li{padding-left: 5px;}
+    
+    .service{width: 72px;height: 35px;padding-left: 5px;left:1031px;background: url(./images/country-点.jpg) 62px 16px no-repeat;border-left:1px solid transparent; border-right:1px solid transparent }
+    .service:hover{background: url(./images/country-点2.jpg) 62px 16px no-repeat white;border-left: 1px solid #eeeeee;border-right: 1px solid #eeeeee;}
+    .service:hover .servicelist{display: block;width: 70px;height: 63px;top:35px;padding-top:9px;}
+        .service li{padding-left: 5px;}
+
+    .page{width: 72px;padding-left: 22px;left:1110px;background: url(./images/page1.jpg) 7px 14px no-repeat,url(./images/country-点.jpg) 79px 16px no-repeat;border-left:1px solid transparent; border-right:1px solid transparent}
+        .page:hover{background: url(./images/page2.jpg) 7px 14px no-repeat,url(./images/country-点2.jpg) 79px 16px no-repeat white;border-left:1px solid #eeeeee; border-right:1px solid #eeeeee;}
+        .pagelist{display: none;}
+        .page:hover .pagelist{display:block;width: 1188px;height: 308px;background:white;border:1px solid #eeeeee;border-top:none;position:relative;left:-1117px;}
+            div[class$=ccc] {width:286px;height: 308px;padding-left:10px;border-right:1px solid #eeeeee;float: left;position: relative}
+            div[class$=ccc] span{font-size: 16px;font-weight: 600;font-family: "helvetica neue";line-height:38px;}
+            div[class$=ccc] ul{width:286px;margin-left:-3px;margin-top:-3px;}
+            div[class$=ccc] ul li{box-sizing: border-box;line-height: 30px;color:#3c3c3c;float: left;}
+            .pagelist1ccc li{width:24%;}
+            .pagelist2ccc li{width:33%;}
+            .pagelist3ccc li{width:33%;}
+            .pagelist4ccc li{width:49%;}
+
+            .pagelist li:hover{background:none;}
+            .pagelist a{padding:7px 8px;border-radius: 2px;background:transparent;position: relative;}
+            .pagelist1ccc ul li:hover a{border-radius: 2px;background:#ff5500;color:#ffffff;}
+            .pagelist2ccc ul li:hover a{border-radius: 2px;background:#a0b959;color:#ffffff;}
+            .pagelist3ccc ul li:hover a{border-radius: 2px;background:#df61ab;color:#ffffff;}
+            .pagelist4ccc ul li:hover a{border-radius: 2px;background:#52a0e5;color:#ffffff;}
+
+            
+            .hot{width:9px;height:14px;background: url(./images/hot.gif);position: absolute;top:-5px;right: 0px;}
+            .new{width:9px;height:14px;background: url(./images/new.gif);position: absolute;top:-5px;right: 0px;}
+            
+
+
+    </style>
+</head>
+<body>
+    <div id="title">
+        <div class="country">
+            中国大陆
+            <ul class="countrylist">
+                <li>全球</li>
+                <li>中国大陆</li>
+                <li>中国香港</li>
+                <li>中国台湾</li>
+                <li>中国澳门</li>
+                <li>韩国</li>
+                <li>马来西亚</li>
+                <li>澳大利亚</li>
+                <li>新加坡</li>
+                <li>新西兰</li>
+                <li>加拿大</li>
+                <li>美国</li>
+                <li>日本</li>
+            </ul>
+        </div>
+        <div class="enter">
+           <a href="#">亲，请登录</a> 
+        </div>
+        <div class="register">
+            <a href="#">免费注册</a>
+        </div>
+        <div class="phone">
+            <a href="#">手机逛淘宝</a>
+        </div>  
+        <div class="my">
+           <a href="d"> 我的淘宝</a>
+            <ul class="mylist"> 
+                <li> 已买到的宝贝</li>
+                <li> 我的足迹</li>
+            </ul>
+        </div>
+        <div class="shoppingcart">
+            <a href="e"> 购物车</a>
+        </div>
+        <div class="bookmark">
+            <a href="s">收藏夹</a>
+            <ul class="bookmarklist">
+                <li>收藏的宝贝</li>
+                <li>收藏的店铺</li>
+            </ul>
+        </div>
+        <div class="c">
+            <a href="3">商品分类</a>
+        </div>
+        <div class="seller">
+           <a href="3">千牛卖家中心</a>
+            <ul class="sellerlist">
+                <li>免费开店</li>
+                <li>已卖出的宝贝</li>
+                <li>出售中的宝贝</li>
+                <li>卖家服务市场</li>
+                <li>卖家培训中心</li>
+                <li>体检中心</li>
+                <li>问商友</li>
+            </ul>
+        </div>
+        <div class="service">
+            <a href="#">联系客服</a>
+            <ul class="servicelist">
+                <li>消费者客服</li>
+                <li>卖家客服</li>
+            </ul>
+        </div>
+        <div class="page">
+            <a href="#"> 网站导航</a>
+            <div class="pagelist">   
+                <div class="pagelist1ccc">
+                    <span style="color: #fc581e" >
+                          主题市场
+                    </span>
+                  
+                    <ul>
+                        <li><a  href="">
+                            女装
+                            <i class="hot"></i>
+                        </a></li>
+                        <li><a href="#">
+                            男装
+                        </a></li>
+                        <li><a href="#">
+                            内衣
+                        </a></li>
+                        <li><a href="#">
+                            鞋靴
+                        </a></li>
+                        <li><a href="#">
+                            箱包
+                        </a></li>
+                        <li><a href="#">
+                            婴童
+                        </a></li>
+                        <li><a href="#">
+                            家电
+                            <i class="new"></i>
+                        </a></li>
+                        <li><a href="#">
+                            数码
+                        </a></li>
+                        <li><a href="#">
+                            手机
+                        </a></li>
+                        <li><a href="#">
+                            美妆
+                        </a></li>
+                        <li><a href="#">
+                            珠宝
+                        </a></li>
+                        <li><a href="#">
+                            眼镜
+                        </a></li>
+                        <li><a href="#">
+                            手表
+                        </a></li>
+                        <li><a href="#">
+                            运动
+                        </a></li>
+                        <li><a href="#">
+                            户外
+                        </a></li>
+                        <li><a href="#">
+                            乐器
+                        </a></li>
+                        <li><a href="#">
+                            游戏
+                        </a></li>
+                        <li><a href="#">
+                            动漫
+                        </a></li>
+                        <li><a href="#">
+                            影视
+                        </a></li>
+                        <li><a href="#">
+                            美食
+                        </a></li>
+                        <li><a href="#">
+                            鲜花
+                        </a></li>
+                        <li><a href="#">
+                            宠物
+                        </a></li>
+                        <li><a href="#">
+                            农资
+                        </a></li>
+                        <li><a href="#">
+                            房产
+                        </a></li>
+                        <li><a href="#">
+                            装修
+                        </a></li>
+                        <li><a href="#">
+                            建材
+                        </a></li>
+                        <li><a href="#">
+                            家居
+                            <i class="hot"></i>
+                        </a></li>
+                        <li><a href="#">
+                            百货
+                        </a></li>
+                        <li><a href="#">
+                            汽车
+                        </a></li>
+                        <li><a href="#">
+                            二手车
+                        </a></li>
+                        <li><a href="#">
+                            办公
+                        </a></li>
+                        <li><a href="#">
+                            定制
+                        </a></li>
+                        <li><a href="#">
+                            教育
+                        </a></li>
+                        <li><a href="#">
+                            卡券
+                        </a></li>
+                        <li><a href="#">
+                            本地
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="pagelist2ccc">
+                    <span style="color: #a6bd46">
+                        特色市场
+                    </span>
+                    <ul>
+                        <li><a href="">
+                            爱逛街
+                        </a></li>
+                            
+                        <li><a href="">
+                            美妆秀
+                        </a></li>
+                        <li><a href="">
+                            全球购
+                            <i class="hot"></i>
+                        </a></li>
+                        <li><a href="">
+                            腔调
+                        </a></li>
+                        <li><a href="">
+                            淘女郎
+                        </a></li>
+                            
+                        <li><a href="">
+                            星店
+                        </a></li>
+                        <li><a href="">
+                            极有家
+                            <i class="hot"></i>
+                        </a></li>
+                        <li><a href="">
+                            阿里拍卖
+                        </a></li>
+                        <li><a href="">
+                            淘宝众筹
+                        </a></li>
+                        <li><a href="">
+                            飞猪
+                        </a></li>
+                        <li><a href="">
+                            亲宝贝
+                            <i class="new"></i>
+                        </a></li>
+                        <li><a href="">
+                            闲鱼
+                        </a></li>
+                        <li><a href="">
+                            农资
+                        </a></li>
+                        <li><a href="">
+                            天天特卖
+                            <i class="hot"></i>
+                        </a></li>
+                        <li><a href="">
+                            Outlets
+                        </a></li>
+                        <li><a href="">
+                            俪人购
+                        </a></li>
+                        <li><a href="">
+                            聚名品
+                        </a></li>
+                        <li><a href="">
+                            淘抢购
+                        </a></li>
+                        <li><a href="">
+                            全球精选
+                        </a></li>
+                        <li><a href="">
+                            非常大牌
+                        </a></li>
+                            
+                        <li><a href="">
+                            试用
+                        </a></li>
+                        <li><a href="">
+                            量贩团
+                        </a></li>
+                        <li><a href="">
+                            阿里翻译
+                            <i class="new"></i>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="pagelist3ccc">
+                    <span style="color: #d75696">
+                        阿里APP
+                    </span>
+                    
+                    <ul>
+                        <li><a href="#">
+                            淘宝
+                            <i class="hot"></i>
+                        </a></li>
+                        <li><a href="#">
+                            天猫
+                        </a></li>
+                        <li><a href="#">
+                            支付宝
+                        </a></li>
+                        <li><a href="#">
+                            聚划算
+                        </a></li>
+                        <li><a href="#">
+                            飞猪
+                        </a></li>
+                        <li><a href="#">
+                            蚂蚁聚宝
+                            <i class="new"></i>
+                        </a></li>
+                        <li><a href="#">
+                            旺信
+                        </a></li>
+                        <li><a href="#">
+                            闲鱼
+                            <i class="hot"></i>
+                        </a></li>
+                        <li><a href="#">
+                            阿里钱盾
+                        </a></li>
+                        <li><a href="#">
+                            钉钉
+                            <i class="hot"></i>
+                        </a></li>
+                        <li><a href="#">
+                            高德地图
+                        </a></li>
+                        <li><a href="#">
+                            点点虫
+                        </a></li>
+                        <li><a href="#">
+                            虾米音乐
+                        </a></li>
+                        <li><a href="#">
+                            淘票票
+                        </a></li>
+                        <li><a href="#">
+                            菜鸟裹裹
+                            <i class="new"></i>
+                        </a></li>
+                        <li><a href="#">
+                            爱逛街
+                        </a></li>
+                        <li><a href="#">
+                            拍卖会
+                        </a></li>
+                        <li><a href="#">
+                            阿里云
+                        </a></li>
+                        <li><a href="#">
+                            网商银行
+                        </a></li>
+                        <li><a href="#">
+                            阿里邮箱
+                            <i class="new"></i>
+                        </a></li>
+                        <li><a href="#">
+                            阿里众包
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="pagelist4ccc">
+                    <span style="color: #40a7de">
+                        精彩推荐集
+                    </span>
+                    <ul>
+                        <li><a href="#">
+                            余额宝
+                            <i class="hot"></i>
+                        </a></li>
+                        <li><a href="#">
+                            大牌捡宝
+                        </a></li>
+                        <li><a href="#">
+                            淘公仔
+                        </a></li>
+                        <li><a href="#">
+                            浏览器
+                        </a></li>
+                        <li><a href="#">
+                            淘宝香港
+                        </a></li>
+                        <li><a href="#">
+                            淘宝台湾
+                        </a></li>
+                        <li><a href="#">
+                            淘宝全球
+                        </a></li>
+                        <li><a href="#">
+                            淘宝东南亚
+                        </a></li>
+                        <li><a href="#">
+                            闺蜜淘货
+                        </a></li>
+                        <li><a href="#">
+                            大众评审
+                        </a></li>
+                        <li><a href="#">
+                            淘工作
+                            <i class="new"></i>
+                        </a></li>
+                        <li><a href="#">
+                            阿里巴巴认证
+                            <i class="new"></i>
+                        </a></li>
+                    </ul>
+                </div>
+            </div> 
+        </div>
+
+
+    </div>
+    <div>
+      <p>zhshiyigekuaikkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</p>
+    </div> 
+</body>
+</html>
